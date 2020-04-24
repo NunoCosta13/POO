@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <!-- Obtido em: https://sketchfab.com/3d-models/hong-kong-traffic-light-c5a8a5726a7c4cddb8b7060b475ac8cf -->
+            <a-asset-item id="semaforo" src="https://cdn.glitch.com/d1dff490-0d95-4a5d-a738-4d103c112fd9%2Fscene.gltf?v=1585149310902"></a-asset-item>
+        </a-assets>
+
+        <!-- Câmera -->
+        <a-entity position="-3 0 1" rotation="0 -45 0">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <!-- Luz Ambiente-->
+        <a-entity light="type: ambient; color: #4a76a2; intensity: 0.3">
+        </a-entity>
+
+        <!-- Céu -->
+        <a-sky color="#06121e"></a-sky>
+
+        <!-- Chão -->
+        <a-plane color="#333" rotation="-90 0 0" scale="1000 1000 1000" repeat="1000 1000" roughness="1">
+        </a-plane>
+
+        <!-- Modelo Semáforo -->
+        <a-entity gltf-model="#semaforo" position="0 0 -5" scale="0.01 0.01 0.01" rotation="0 -90 0">
+        </a-entity>
+
+        <!-- Luz da lampada vermelha do semáforo -->
+        <a-entity id="vermelho" light="distance: 0.34; intensity: 4; color: #CC0000; type: point; decay: 3; castShadow: true" position="0 2.63 -4.65">
+        </a-entity>
+
+        <!-- Projeção da luz vermelha do semáforo -->
+        <a-entity id="vermelho-cone" light="angle: 45; type: spot; color: #ff0f27; penumbra: 1; decay: -0.4; intensity: 1; shadowBias: 0.17" position="-0.04 2.6 -4.5" rotation="-45 180 180">
+        </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
