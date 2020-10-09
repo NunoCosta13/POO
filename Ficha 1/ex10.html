@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ALINEA e)
+        let userName = prompt('Username:', '')
+        if (userName == 'Admin') {
+            let password = prompt('Password:', '')
+            if (password == 'TheMaster') {
+                alert('Bem-Vindo')
+            } else if (password == '' || password == null) {
+                alert('cancelado')
+            } else {
+                alert('Password Errada')
+            }
+        } else if (userName == '' || userName == null) {
+            alert('cancelado')
+        } else {
+            alert('Não te conheço')
+        }
+    </script>
+</body>
+
+</html>
